@@ -1,0 +1,54 @@
+h1{
+    text-align: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.first, .second, .third{
+    border: 2px solid black;
+    margin: 20px;
+    background-color: burlywood;
+}
+h3{
+    font-size: 30px;
+    border: 2px solid black;
+    display: inline-block;
+    color: rgb(94, 17, 17);
+    background-color: rgb(159 202 21)
+}
+p{
+    padding: 10px;
+}
+@media (max-width:991px) and (min-width: 768px){
+    .container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: 
+            "first first first second second second"
+            "third third third third third third";
+    }
+
+    .first {
+        grid-area: first;
+    }
+
+    .second {
+        grid-area: second;
+    }
+
+    .third {
+        grid-area: third;
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        display: block;
+    }
+
+    .first, .second, .third {
+        margin: 10px auto;
+        width: 90%;
+    }
+}
+
